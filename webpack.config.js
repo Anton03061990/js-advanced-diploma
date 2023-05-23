@@ -9,19 +9,19 @@ module.exports = {
   },
   module: {
     rules: [
-        {
-            test: /\.(png|jpg|gif)$/i,
-            dependency: { not: ['url'] },
-            use: [
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 8192,
-                }
-              },
-            ],
-           type: 'javascript/auto'
+      {
+        test: /\.(png|jpg|gif)$/i,
+        dependency: { not: ['url'] },
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
           },
+        ],
+        type: 'javascript/auto',
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
