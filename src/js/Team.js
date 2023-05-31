@@ -15,15 +15,17 @@
  * */
 export default class Team {
   // TODO: write your logic here
-  constructor(characters = []) {
-    this.characters = characters;
+  constructor() {
+    this.members = new Set();
   }
 
-  add(character) {
-    this.characters.push(character);
+  addHeroes(characters) {
+    this.members = new Set([...this.members, ...characters]);
   }
 
-  addAll(characters) {
-    this.characters.push(...characters);
+  *[Symbol.iterator]() {
+    for (const person of this.members) {
+      yield person;
+    }
   }
 }

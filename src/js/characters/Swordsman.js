@@ -1,14 +1,13 @@
 import Character from '../Character';
 
 export default class Swordsman extends Character {
-  constructor(level, health) {
-    super();
-    this.level = level;
+  constructor(level, type) {
+    super(level, type);
     this.attack = 40;
     this.defence = 10;
-    this.health = health;
+    this.distance = 4;
+    this.attackRange = 1;
     this.type = 'swordsman';
-    this.moveDistance = 4;
-    this.attackDistance = 1;
+    this.class = 'Мечник';
   }
 }
