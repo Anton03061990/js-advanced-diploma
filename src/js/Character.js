@@ -21,7 +21,7 @@ export default class Character {
     this.type = type;
     // TODO: выбросите исключение, если кто-то использует "new Character()"
     if (new.target.name === 'Character') {
-      throw new Error('Ошибка! Создавать объекты этого класса через new Character(level) запрещено!');
+      throw new Error('Невозможно создать персонажа!');
     }
   }
 }
