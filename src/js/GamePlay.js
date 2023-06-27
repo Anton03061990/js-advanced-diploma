@@ -1,8 +1,9 @@
+import { BOARD_SIZE } from './const';
 import { calcHealthLevel, calcTileType } from './utils';
 
 export default class GamePlay {
   constructor() {
-    this.boardSize = 8;
+    this.boardSize = BOARD_SIZE;
     this.container = null;
     this.boardEl = null;
     this.cells = [];
@@ -82,7 +83,10 @@ export default class GamePlay {
       healthEl.classList.add('health-level');
 
       const healthIndicatorEl = document.createElement('div');
-      healthIndicatorEl.classList.add('health-level-indicator', `health-level-indicator-${calcHealthLevel(position.character.health)}`);
+      healthIndicatorEl.classList.add(
+        'health-level-indicator',
+        `health-level-indicator-${calcHealthLevel(position.character.health)}`,
+      );
       healthIndicatorEl.style.width = `${position.character.health}%`;
       healthEl.appendChild(healthIndicatorEl);
 
@@ -192,8 +196,7 @@ export default class GamePlay {
 
   deselectCell(index) {
     const cell = this.cells[index];
-    cell.classList.remove(...Array.from(cell.classList)
-      .filter((o) => o.startsWith('selected')));
+    cell.classList.remove(...Array.from(cell.classList).filter((o) => o.startsWith('selected')));
   }
 
   showCellTooltip(message, index) {

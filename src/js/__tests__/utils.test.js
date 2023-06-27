@@ -1,15 +1,17 @@
 import { calcTileType } from '../utils';
 
-const boardSize = 8;
+test.each([
+  [0, 'top-left'],
+  [7, 'top-right'],
+  [56, 'bottom-left'],
+  [63, 'bottom-right'],
+  [1, 'top'],
+  [58, 'bottom'],
+  [8, 'left'],
+  [15, 'right'],
+  [10, 'center'],
+])('Проверка функции calcTileType', (input, result) => {
+  const received = calcTileType(input, 8);
 
-test('test draw', () => {
-  expect(calcTileType(0, boardSize)).toBe('top-left');
-  expect(calcTileType(boardSize - 1, boardSize)).toBe('top-right');
-  expect(calcTileType(boardSize * boardSize - boardSize, boardSize)).toBe('bottom-left');
-  expect(calcTileType(boardSize * boardSize - 1, boardSize)).toBe('bottom-right');
-  expect(calcTileType(boardSize - 2, boardSize)).toBe('top');
-  expect(calcTileType(boardSize * 2, boardSize)).toBe('left');
-  expect(calcTileType(boardSize * 2 - 1, boardSize)).toBe('right');
-  expect(calcTileType(boardSize * boardSize - 2, boardSize)).toBe('bottom');
-  expect(calcTileType(boardSize * 3 - 3, boardSize)).toBe('center');
+  expect(received).toBe(result);
 });
