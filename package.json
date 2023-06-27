@@ -1,29 +1,20 @@
 {
   "name": "js-advanced-diploma",
   "version": "1.0.0",
-  "description": "Вы неплохо овладели не только продвинутыми возможностями JS, но и инфраструктурными инструментами. Вам поручили первый проект: разработать небольшую пошаговую игру.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
+    "test": "jest --coverage",
     "lint": "eslint . --fix",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "build": "webpack --mode production",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:dist": "npm run build",
     "show:dist": "live-server dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Anton03061990/js-advanced-diploma.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Anton03061990/js-advanced-diploma/issues"
-  },
-  "homepage": "https://github.com/Anton03061990/js-advanced-diploma#readme",
+  "license": "ISC",   
   "devDependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",

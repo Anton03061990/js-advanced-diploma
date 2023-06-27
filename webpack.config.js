@@ -3,16 +3,13 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(png|jpg|gif)$/i,
-        dependency: { not: ['url'] },
         use: [
           {
             loader: 'url-loader',
@@ -21,7 +18,6 @@ module.exports = {
             },
           },
         ],
-        type: 'javascript/auto',
       },
       {
         test: /\.js$/,
